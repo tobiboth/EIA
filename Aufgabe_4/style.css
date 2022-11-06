@@ -1,15 +1,240 @@
-header {
-    background-image:url(IMG-0903.jpg);
-    
+body {
+    width: auto;
+    height: auto;
+    margin: 10px;
 }
 
-div.toprigth {
+nav {
+    background-image: url("IMG-0903.jpg");
+    height: 400px;
+    width: auto;
+    background-size: cover;
+    background-position: center;
+    padding-top: 50px;
+}
+
+#content {
+    margin-inline: 1%;
+    background-color: silver;
+    box-sizing: border-box;
+    border: 7px solid rgb(0, 0, 0);
+    border-radius: 15px;
+}
+
+#logo {
+    background-image: "logo.svg";
+    float: left;
+    margin-left: 250px;
+    margin-top: 20px;
+    width: 10rem;
+    height: 4rem;
+    border-bottom: none;
+}
+
+ul {
+    background-color: black;
+    margin-right: 250px;
+    margin-top: 40px;
+}
+
+li {
+    float: right;
+    list-style-type: none;
+    padding-inline: 20px;
+}
+
+a.one {
+    display: block;
+    text-decoration: none;
+    color: grey;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a.one:hover {
+    color: white;
+    border-bottom: solid 2px white;
+}
+
+a.one:active {
+    background-color: white;
+}
+
+h1 {
+    color: silver;
+    font-size: 60px;
+    font-weight: bolder;
+    position: left;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 10%;
+    width: fit-content;
+    padding-right: 1%;
+    border: 20px solid black;
+    border-style: outset;
+    border-bottom-right-radius: 25px;
+    background-color: black;
+    margin-top: 2px;
+    margin-bottom: 1px;
+}
+
+h2 {
+    padding-left: 45%;
+    padding-right: 5%;
+    width: max-content;
+    font-family: monospace;
+    font-size: 45px;
+    color: silver;
+    border: 10px solid blueviolet;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: blueviolet;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+h3 {
+    float: right;
+    padding-right: 45%;
+    padding-left: 5%;
+    font-family: monospace;
+    font-size: 45px;
+    text-align: center;
+    color: silver;
+    border: 10px solid rgb(2, 169, 2);
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    background-color: rgb(2, 169, 2);
+    margin-bottom: 5px;
+}
+
+#photos {
+    padding-bottom: 20px;
+}
+
+.photo {
+    text-align: center;
+    float: none;
+    max-width: 100%;
+}
+
+#illustrations {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.illustration {
+    float: none;
+    display: inline-block;
+    padding: 30px;
+    background-color: black;
+    margin-bottom: 50px;
+    margin-top: 5px;
+}
+
+#footercontent {
+    background-image: url("footer.jpg");
+    height: auto;
+    width: auto;
+    background-size: cover;
+    background-position: center;
+    margin-inline: auto;
+    box-sizing: border-box;
+    border: 7px solid rgb(0, 0, 0);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+table {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    position: absolute;
-    top: 8px;
-    right: 200px;
-
-
+    font-size: 30px;
+    text-align: left;
+    margin-left: 250px;
+    margin-bottom: 30px;
 }
+
+th {
+    font-size: 40px;
+    height: 100px;
+    font-weight: normal;
+}
+
+.three {
+    height: 20px;
+    color: silver;
+    font-size: 30px;
+    position: inherit;
+}
+
+td {
+    height: 30px;
+    color: silver;
+}
+
+p {
+    margin-left: 13%;
+    margin-top: 80px;
+    color: black;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    margin-left: 13%;
+    margin-top: 30px;
+    color: black;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h4 {
+    padding-left: 18%;
+    padding-right: 20px;
+    width: max-content;
+    font-family: monospace;
+    font-size: 45px;
+    color: white;
+    border: 3px solid black;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: black;
+    margin-top: 30px;
+    margin-bottom: -35px;
+}
+
+.answer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color: black;
+    margin-left: 20%;
+}
+
+input {
+    font-size: 30px;
+    color: white;
+    background-color: grey;
+    border-color: black;
+    border-radius: 4px;
+    width: 50%;
+    height: auto;
+}
+
+.massage {
+    position: relative;
+    height: 350px;
+}
+
+.button {
+    padding-right: 8px;
+    width: 150px;
+    padding-top: 5px;
+}
+
+::placeholder {
+	color:white;
+	opacity:1;
+	transition: opacity 1s;
+}
+
+:focus::placeholder { opacity:0  }
 
