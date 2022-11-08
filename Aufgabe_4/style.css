@@ -57,7 +57,7 @@ a.one:hover {
 }
 
 a.one:active {
-    background-color: white;
+    color: white;
 }
 
 h1 {
@@ -114,7 +114,7 @@ h3 {
 .photo {
     text-align: center;
     float: none;
-    max-width: 100%;
+    max-width: auto;
 }
 
 #illustrations {
@@ -222,6 +222,7 @@ input {
 .massage {
     position: relative;
     height: 350px;
+    position: top;
 }
 
 .button {
@@ -231,10 +232,11 @@ input {
 }
 
 ::placeholder {
-	color:white;
-	opacity:1;
-	transition: opacity 1s;
+    color: white;
+    opacity: 1;
+    transition: opacity 1s;
 }
 
-:focus::placeholder { opacity:0  }
-
+:focus::placeholder {
+    opacity: 0;
+}
