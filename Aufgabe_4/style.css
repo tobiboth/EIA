@@ -5,7 +5,7 @@ body {
 }
 
 nav {
-    background-image: url("IMG-0903.jpg");
+    background-image: url("picture/IMG-0903.jpg");
     height: 400px;
     width: auto;
     background-size: cover;
@@ -22,7 +22,7 @@ nav {
 }
 
 #logo {
-    background-image: "logo.svg";
+    background-image: "picture/logo.svg";
     float: left;
     margin-left: 250px;
     margin-top: 20px;
@@ -132,7 +132,7 @@ h3 {
 }
 
 #footercontent {
-    background-image: url("footer.jpg");
+    background-image: url("picture/footer.jpg");
     height: auto;
     width: auto;
     background-size: cover;
