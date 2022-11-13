@@ -23,21 +23,28 @@ nav {
     background-position: center;
     padding-top: 50px;
     animation-name: slideshow;
-    animation-duration: 10s;
     animation-iteration-count: infinite;
+    animation-duration: 20s;
 }
 
 @keyframes slideshow {
-    0% {
+    0%, 20% {
         background-image: url("picture/IMG-0903.jpg");
     }
-
-    50% {
+    20%, 40% {
         background-image: url("picture/1header.jpg");
     }
-
-    100% {
+    40%, 60% {
         background-image: url("picture/gecko.jpg");
+    }
+    60%, 80%{
+        background-image: url("picture/slide1.jpg");
+    }
+    80%, 100%{
+        background-image: url("picture/slide2.jpeg");
+    }
+    100%{
+        background-image: url("picture/IMG-0903.jpg");
     }
 }
 
@@ -146,7 +153,7 @@ h3 {
     float: right;
     padding-right: 45%;
     padding-left: 5%;
-    font-family: monospace;
+    font-family: 'Righteous', cursive;
     font-size: 45px;
     text-align: center;
     color: silver;
@@ -192,7 +199,7 @@ h3 {
     transition-duration: 1s;
     transition-timing-function: linear;
     transform: scale(1.1);
-    padding: 5px;
+margin: 50px;
 }
 
 #illustrations {
