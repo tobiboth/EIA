@@ -7,7 +7,6 @@ console.log("Die Einwohnerzahl in " + Land1 + " im Jahr 2006: " + EinwohnerzahlD
 console.log("Die Bevölkerung stiegt um: " +((1-EinwohnerzahlDE2006/EinwohnerzahlDE2022)*100)+"%");
 
 
-
 const Land2 = "Frankreich";
 const EinwohnerzahlFR2022 = 67840000;
 const EinwohnerzahlFR2006 = 63620000;
@@ -34,5 +33,3 @@ const EinwohnerzahlP2006 = 10520000;
 console.log("Die Einwohnerzahl in " + Land4 + " im Jahr 2022: " + EinwohnerzahlP2022);
 console.log("Die Einwohnerzahl in " + Land4 + " im Jahr 2006: " + EinwohnerzahlP2006);
 console.log("Die Bevölkerung fiel um: " +((1-EinwohnerzahlP2022/EinwohnerzahlP2006)*100)+"%");
-
-
