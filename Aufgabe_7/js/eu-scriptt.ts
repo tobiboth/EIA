@@ -45,7 +45,7 @@ document.querySelector(".portugal").addEventListener('click', function(){
 })
 
 function eu (nation, bevölkerungEU): void {
-    document.querySelector(".stars") as HTMLAnchorElement (bevölkerungEU/ 1000000).toFixed(2) + "Mio.";
+    document.querySelector(".stars") as HTMLAnchorElement ;(bevölkerungEU/ 1000000).toFixed(2) + "Mio.";
 }
 
 document.querySelector(".stars").addEventListener('click', function(){
