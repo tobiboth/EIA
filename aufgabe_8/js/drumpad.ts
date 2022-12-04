@@ -67,7 +67,7 @@ function playBeat (): void {
         if(count > 6){
             count = 0;
         }
-    },500);
+    },420);
 }
 
 document.querySelector(".play").addEventListener('click', function(){
