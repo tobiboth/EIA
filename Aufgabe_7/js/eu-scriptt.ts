@@ -44,16 +44,13 @@ document.querySelector(".portugal").addEventListener('click', function(){
     population("Portugal", bevölkerungP2022, bevölkerungP2006);
 })
 
-
-
-/**function eu (nation, bevölkerungEU): void {
-    document.querySelector(".stars") as HTMLImageElement, (bevölkerungEU/ 1000000).toFixed(2) + "Mio.";
+function eu (nation, bevölkerungEU): void {
+    document.querySelector(".stars") as HTMLAnchorElement (bevölkerungEU/ 1000000).toFixed(2) + "Mio.";
 }
 
 document.querySelector(".stars").addEventListener('click', function(){
     eu ("EU-Bevölkerungszahl: ", bevölkerungEU);
 })
-*/
 
 
 /**
