@@ -53,7 +53,6 @@ document.querySelector(".snare").addEventListener("click", function () {
 
 //Teil B
 var beat: string [] = ['sound/kick.mp3', 'sound/hihat.mp3', 'sound/kick.mp3', 'sound/kick.mp3', 'sound/snare.mp3', 'sound/hihat.mp3', 'sound/snare.mp3' ];
-var count: number = 0;
 
 function playbeat (text): void {
     var beat: HTMLAudioElement = new Audio(text);
@@ -62,11 +61,7 @@ function playbeat (text): void {
 
 function playBeat (): void {
     setInterval(function () {
-        playbeat(beat[count]);
-        count +=1;
-        if(count > 6){
-            count = 0;
-        }
+        playbeat(beat);
     },420);
 }
 
