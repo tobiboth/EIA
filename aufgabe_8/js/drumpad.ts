@@ -9,62 +9,68 @@ var soundhihat: HTMLAudioElement = new Audio('sound/hihat.mp3');
 var soundkick: HTMLAudioElement = new Audio('sound/kick.mp3');
 var soundsnare: HTMLAudioElement = new Audio('sound/snare.mp3');
 
-function playsample(sound) {
+function playsample1(sound) {
     sound.play();
 }
 
 document.querySelector(".a").addEventListener("click", function () {
-    playsample(soundA)
+    playsample1(soundA)
 })
 
 document.querySelector(".c").addEventListener("click", function () {
-    playsample(soundC)
+    playsample1(soundC)
 })
 
 document.querySelector(".f").addEventListener("click", function () {
-    playsample(soundF)
+    playsample1(soundF)
 })
 
 document.querySelector(".g").addEventListener("click", function () {
-    playsample(soundG)
+    playsample1(soundG)
 })
 
 document.querySelector(".l1").addEventListener("click", function () {
-    playsample(soundlaugh1)
+    playsample1(soundlaugh1)
 })
 
 document.querySelector(".l2").addEventListener("click", function () {
-    playsample(soundlaugh2)
+    playsample1(soundlaugh2)
 })
 
 document.querySelector(".hihat").addEventListener("click", function () {
-    playsample(soundhihat)
+    playsample1(soundhihat)
 })
 
 document.querySelector(".kick").addEventListener("click", function () {
-    playsample(soundkick)
+    playsample1(soundkick)
 })
 
 document.querySelector(".snare").addEventListener("click", function () {
-    playsample(soundsnare)
+    playsample1(soundsnare)
 })
 
 
 
 //Teil B
-var beat: string [] = ['sound/kick.mp3', 'sound/hihat.mp3', 'sound/kick.mp3', 'sound/kick.mp3', 'sound/snare.mp3', 'sound/hihat.mp3', 'sound/snare.mp3' ];
+var audio: string[] = ['sound/kick.mp3', 'sound/hihat.mp3', 'sound/kick.mp3', 'sound/kick.mp3', 'sound/snare.mp3', 'sound/hihat.mp3', 'sound/snare.mp3'];
+var count: number = 0;
+let intervalid: number;
 
-function playbeat (text): void {
+function playbeat1(text): void {
     var beat: HTMLAudioElement = new Audio(text);
-    beat.play(); 
+    beat.play();
 }
 
-function playBeat (): void {
-    setInterval(function () {
-        playbeat(beat);
-    },420);
+function playbeat2(): void {
+    intervalid = setInterval(function () {
+        playbeat1(audio[count]);
+        count += 1;
+        if (count > 5) {
+            count = 0;
+        }
+    }, 420);
 }
 
-document.querySelector(".play").addEventListener('click', function(){
-    playBeat();
+document.querySelector(".play").addEventListener('click', function () {
+    playbeat2();
 })
