@@ -37,7 +37,7 @@ var count = 0;
 let beatid;
 var shuffle = [sound[6], sound[7], sound[8]];
 let shuffleid;
-var count2 = 0;
+var rmx = 0;
 function playBeat() {
     beatid = setInterval(function () {
         playsample(audio[count]);
@@ -50,7 +50,6 @@ function playBeat() {
 //Aufgabe 3:
 var playstopBTN = document.getElementById("yoooo");
 var remixBTN = document.getElementById("yaaaa");
-var count = 0;
 function playstop() {
     if (playstopBTN.classList.contains('fa-play')) {
         playstopBTN.classList.remove('fa-play');
@@ -71,20 +70,24 @@ document.querySelector('#playstopBTN').addEventListener('click', function () {
 });
 function remix() {
     shuffleid = setInterval(function () {
-        const rmx = Math.floor(Math.random() * audio.length);
-        playsample(shuffle[rmx], [count2]);
-    }, 420);
+        rmx = Math.floor(Math.random() * shuffle.length);
+        playsample(shuffle[rmx]);
+        rmx += 1;
+        if (rmx > shuffle.length) {
+            rmx = 0;
+        }
+    }, 400);
 }
 function remixstop() {
     if (remixBTN.classList.contains('fa-brain')) {
-        playstopBTN.classList.remove('fa-play');
-        playstopBTN.classList.add('fa-pause');
+        remixBTN.classList.remove('fa-brain');
+        remixBTN.classList.add('fa-pause');
         remix();
         console.log('5');
     }
     else {
-        playstopBTN.classList.remove('fa-pause');
-        playstopBTN.classList.add('fa-play');
+        remixBTN.classList.remove('fa-pause');
+        remixBTN.classList.add('fa-brain');
         clearInterval(shuffleid);
         console.log('6');
     }
