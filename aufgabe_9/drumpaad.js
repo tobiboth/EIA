@@ -1,54 +1,46 @@
 //Teil A
-var soundA = new Audio('sound/A.mp3');
-var soundC = new Audio('sound/C.mp3');
-var soundF = new Audio('sound/F.mp3');
-var soundG = new Audio('sound/G.mp3');
-var soundlaugh1 = new Audio('sound/laugh1.mp3');
-var soundlaugh2 = new Audio('sound/laugh2.mp3');
-var soundhihat = new Audio('sound/hihat.mp3');
-var soundkick = new Audio('sound/kick.mp3');
-var soundsnare = new Audio('sound/snare.mp3');
+let sound = [('sound/A.mp3'), ('sound/C.mp3'), ('sound/F.mp3'), ('sound/G.mp3'), ('sound/laugh1.mp3'), ('sound/laugh2.mp3'), ('sound/hihat.mp3'), ('sound/kick.mp3'), ('sound/snare.mp3')];
 function playsample(sound) {
-    sound.play();
+    let sounds = new Audio(sound);
+    sounds.play();
 }
 document.querySelector(".a").addEventListener("click", function () {
-    playsample(soundA);
+    playsample(sound[0]);
 });
 document.querySelector(".c").addEventListener("click", function () {
-    playsample(soundC);
+    playsample(sound[1]);
 });
 document.querySelector(".f").addEventListener("click", function () {
-    playsample(soundF);
+    playsample(sound[2]);
 });
 document.querySelector(".g").addEventListener("click", function () {
-    playsample(soundG);
+    playsample(sound[3]);
 });
 document.querySelector(".l1").addEventListener("click", function () {
-    playsample(soundlaugh1);
+    playsample(sound[4]);
 });
 document.querySelector(".l2").addEventListener("click", function () {
-    playsample(soundlaugh2);
+    playsample(sound[5]);
 });
 document.querySelector(".hihat").addEventListener("click", function () {
-    playsample(soundhihat);
+    playsample(sound[6]);
 });
 document.querySelector(".kick").addEventListener("click", function () {
-    playsample(soundkick);
+    playsample(sound[7]);
 });
 document.querySelector(".snare").addEventListener("click", function () {
-    playsample(soundsnare);
+    playsample(sound[8]);
 });
 //Teil B
-var audio = ['sound/laugh1.mp3', 'sound/laugh1.mp3', 'sound/laugh2.mp3', 'sound/kick.mp3', 'sound/snare.mp3', 'sound/hihat.mp3', 'sound/snare.mp3', "sound/laugh1.mp3"];
+var audio = [sound[7], sound[6], sound[7], sound[7], sound[8], sound[6], sound[8]];
 var count = 0;
 let beatid;
-function playbeat(text) {
-    var beat = new Audio(text);
-    beat.play();
-}
+var shuffle = [sound[6], sound[7], sound[8]];
+let shuffleid;
+var count2 = 0;
 function playBeat() {
     beatid = setInterval(function () {
-        playbeat(audio[count]);
+        playsample(audio[count]);
         count += 1;
         if (count > audio.length) {
             count = 0;
@@ -57,6 +49,7 @@ function playBeat() {
 }
 //Aufgabe 3:
 var playstopBTN = document.getElementById("yoooo");
+var remixBTN = document.getElementById("yaaaa");
 var count = 0;
 function playstop() {
     if (playstopBTN.classList.contains('fa-play')) {
@@ -77,12 +70,27 @@ document.querySelector('#playstopBTN').addEventListener('click', function () {
     console.log('1');
 });
 function remix() {
-    setInterval(function () {
+    shuffleid = setInterval(function () {
         const rmx = Math.floor(Math.random() * audio.length);
-        playbeat(audio[rmx]);
+        playsample(shuffle[rmx], [count2]);
     }, 420);
 }
+function remixstop() {
+    if (remixBTN.classList.contains('fa-brain')) {
+        playstopBTN.classList.remove('fa-play');
+        playstopBTN.classList.add('fa-pause');
+        remix();
+        console.log('5');
+    }
+    else {
+        playstopBTN.classList.remove('fa-pause');
+        playstopBTN.classList.add('fa-play');
+        clearInterval(shuffleid);
+        console.log('6');
+    }
+}
 document.querySelector('#remixBTN').addEventListener('click', function () {
-    remix();
+    remixstop();
+    console.log('4');
 });
 //# sourceMappingURL=drumpaad.js.map

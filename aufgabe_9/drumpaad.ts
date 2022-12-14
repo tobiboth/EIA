@@ -1,69 +1,60 @@
 //Teil A
-var soundA: HTMLAudioElement = new Audio('sound/A.mp3');
-var soundC: HTMLAudioElement = new Audio('sound/C.mp3');
-var soundF: HTMLAudioElement = new Audio('sound/F.mp3');
-var soundG: HTMLAudioElement = new Audio('sound/G.mp3');
-var soundlaugh1: HTMLAudioElement = new Audio('sound/laugh1.mp3');
-var soundlaugh2: HTMLAudioElement = new Audio('sound/laugh2.mp3');
-var soundhihat: HTMLAudioElement = new Audio('sound/hihat.mp3');
-var soundkick: HTMLAudioElement = new Audio('sound/kick.mp3');
-var soundsnare: HTMLAudioElement = new Audio('sound/snare.mp3');
+let sound: string[] = [('sound/A.mp3'), ('sound/C.mp3'), ('sound/F.mp3'), ('sound/G.mp3'), ('sound/laugh1.mp3'), ('sound/laugh2.mp3'), ('sound/hihat.mp3'), ('sound/kick.mp3'), ('sound/snare.mp3')];
 
-function playsample(sound) {
-    sound.play();
+function playsample(sound: string): void {
+    let sounds: HTMLAudioElement = new Audio(sound);
+    sounds.play();
 }
 
 document.querySelector(".a").addEventListener("click", function () {
-    playsample(soundA)
+    playsample(sound[0]);
 })
 
 document.querySelector(".c").addEventListener("click", function () {
-    playsample(soundC)
+    playsample(sound[1]);
 })
 
 document.querySelector(".f").addEventListener("click", function () {
-    playsample(soundF)
+    playsample(sound[2]);
 })
 
 document.querySelector(".g").addEventListener("click", function () {
-    playsample(soundG)
+    playsample(sound[3]);
 })
 
 document.querySelector(".l1").addEventListener("click", function () {
-    playsample(soundlaugh1)
+    playsample(sound[4]);
 })
 
 document.querySelector(".l2").addEventListener("click", function () {
-    playsample(soundlaugh2)
+    playsample(sound[5]);
 })
 
 document.querySelector(".hihat").addEventListener("click", function () {
-    playsample(soundhihat)
+    playsample(sound[6]);
 })
 
 document.querySelector(".kick").addEventListener("click", function () {
-    playsample(soundkick)
+    playsample(sound[7]);
 })
 
 document.querySelector(".snare").addEventListener("click", function () {
-    playsample(soundsnare)
+    playsample(sound[8]);
 })
 
 
 
 //Teil B
-var audio: string[] = ['sound/laugh1.mp3', 'sound/laugh1.mp3', 'sound/laugh2.mp3', 'sound/kick.mp3', 'sound/snare.mp3', 'sound/hihat.mp3', 'sound/snare.mp3', "sound/laugh1.mp3"];
+var audio: string[] = [sound[7], sound[6], sound[7], sound[7], sound[8], sound[6], sound[8]];
 var count: number = 0;
 let beatid: number;
-
-function playbeat(text): void {
-    var beat: HTMLAudioElement = new Audio(text);
-    beat.play();
-}
+var shuffle: string[] = [sound[6], sound[7], sound[8]];
+let shuffleid: number;
+var count2: number = 0;
 
 function playBeat(): void {
     beatid = setInterval(function () {
-        playbeat(audio[count]);
+        playsample(audio[count]);
         count += 1;
         if (count > audio.length) {
             count = 0;
@@ -74,6 +65,7 @@ function playBeat(): void {
 
 //Aufgabe 3:
 var playstopBTN = document.getElementById("yoooo");
+var remixBTN = document.getElementById("yaaaa");
 var count = 0;
 
 function playstop(): void {
@@ -82,31 +74,49 @@ function playstop(): void {
         playstopBTN.classList.add('fa-pause');
         playBeat();
         console.log('2');
-        
+
     }
     else {
         playstopBTN.classList.remove('fa-pause');
         playstopBTN.classList.add('fa-play');
         clearInterval(beatid);
         console.log('3');
-        
+
     }
 }
 
 document.querySelector('#playstopBTN').addEventListener('click', function () {
     playstop();
     console.log('1');
-    
+
 })
 
 
 function remix() {
-setInterval(function (){
-    const rmx = Math.floor(Math.random() * audio.length);
-    playbeat(audio[rmx]);
-},420);
+    shuffleid = setInterval(function () {
+        const rmx: number = Math.floor(Math.random() * audio.length);
+        playsample(shuffle[rmx], [count2]);
+    }, 420);
 }
 
-document.querySelector('#remixBTN').addEventListener('click', function (){
-    remix();
+function remixstop(): void {
+    if (remixBTN.classList.contains('fa-brain')) {
+        playstopBTN.classList.remove('fa-play');
+        playstopBTN.classList.add('fa-pause');
+        remix();
+        console.log('5');
+
+    }
+    else {
+        playstopBTN.classList.remove('fa-pause');
+        playstopBTN.classList.add('fa-play');
+        clearInterval(shuffleid);
+        console.log('6');
+
+    }
+}
+
+document.querySelector('#remixBTN').addEventListener('click', function () {
+    remixstop();
+    console.log('4');
 })
