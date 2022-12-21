@@ -1,0 +1,37 @@
+body {
+    text-align: center;
+    background-color: rgb(205, 243, 255);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+input {
+    text-align: center;
+    border-radius: 5px;
+    height: 50px;
+    width: 750px;
+    opacity: 0.6;
+    border-color: black;
+    outline: none;
+    vertical-align: middle;
+    font-size: 28px;
+}
+
+::placeholder {
+    color: black;
+}
+
+#addToDo {
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    background-color: aqua;
+    color:hotpink;
+    border-color: black;
+    border-radius: 5px;
+    outline: none;
+    vertical-align: middle;
+}
