@@ -64,7 +64,7 @@ input {
 }
 
 #addButton:hover {
-    color: black;
+    opacity: 1;
 }
 
 #todos {
@@ -114,4 +114,5 @@ input {
 
 .trash:hover {
     opacity: 1;
+    color: rgb(1, 176, 176);
 }

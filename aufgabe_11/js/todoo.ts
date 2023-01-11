@@ -58,7 +58,6 @@ function drawListToDOM(): void {
             "<span class='trash fas fa-trash-alt'></span>";
 
         todo.querySelector(".check").addEventListener("click", function (): void {
-            / übergeben, damit an der entsprechenden Stelle im Array der Wert geändert werden kann.
             toggleCheckState(index);
         });
         todo.querySelector(".trash").addEventListener("click", function (): void {
